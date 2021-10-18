@@ -1,3 +1,4 @@
+import math
 def citire():
     '''
     Citim lista
@@ -51,7 +52,7 @@ def maimaredecat(n):
     :return: True daca este mai mic, False in caz contra
     '''
     ok = False
-    if mediaartimetica(l) > n:
+    if mediaartimetica > n:
         ok = True
     return ok
 
@@ -105,11 +106,13 @@ def main():
         elif op == '2':
             print(eliminareprime(l))
         elif op == '3':
-
-            print(maimaredecat(n))
+            n = int(input("Dati un numar"))
+            if mediaartimetica(l) > n:
+                print("Da")
+            else:
+                print("Nu")
         elif op == '4':
             print(listacudivivori(l))
-
         elif op == 'x':
             break
         else:
