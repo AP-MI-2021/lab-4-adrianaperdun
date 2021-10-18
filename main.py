@@ -10,6 +10,11 @@ def citire():
     return l
 
 def numarprim(n):
+    '''
+    Verificam daca un numar dat este prim.
+    :param n: numarul de intrare
+    :return: Daca e prim va returna True, respectiv False in caz contrar.
+    '''
     ok = False
     if n > 1:
         for i in range(2, n//2+1):
@@ -28,6 +33,26 @@ def eliminareprime(l):
         if numarprim(i):
             r.append(i)
     return r
+
+
+def mediaartimetica(l):
+    '''
+    Calculam media aritmetica a listei initiale.
+    :param l: lista
+    :return: media aritmetica
+    '''
+    ave = sum(l) / len(l)
+    return ave
+
+def maimaredecat(n):
+    if mediaartimetica(l) > n:
+        return True
+    else:
+        return False
+
+def test_mediaaritmetica():
+    assert mediaartimetica([7,2,4,18]) == 7
+    assert mediaartimetica([1,1,1,1,1,1,1]) == 1
 
 def test_numarprim():
     assert numarprim(7) is True
@@ -49,6 +74,9 @@ def main():
             l = citire()
         elif op == '2':
             print(eliminareprime(l))
+        elif op == '3':
+            n = int(input("Dati un numar: "))
+            print(maimaredecat(n))
         elif op == 'x':
             break
         else:
