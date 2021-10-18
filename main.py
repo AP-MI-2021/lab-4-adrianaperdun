@@ -1,4 +1,3 @@
-import math
 def citire():
     '''
     Citim lista
@@ -111,7 +110,7 @@ def main():
         elif op == '4':
             print(listacudivivori(l))
         elif op == 'a':
-            pritn(mediaartimetica(l))
+            print(mediaartimetica(l))
         elif op == 'x':
             break
         else:
