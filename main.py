@@ -105,12 +105,11 @@ def main():
         elif op == '2':
             print(eliminareprime(l))
         elif op == '3':
-            n = int(input("Dati un numar: "))
+
             print(maimaredecat(n))
         elif op == '4':
             print(listacudivivori(l))
-        elif op == 'a':
-            print(mediaartimetica(l))
+
         elif op == 'x':
             break
         else:
