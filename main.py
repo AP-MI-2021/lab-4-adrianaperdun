@@ -1,3 +1,4 @@
+import math
 def citire():
     '''
     Citim lista
@@ -45,10 +46,40 @@ def mediaartimetica(l):
     return ave
 
 def maimaredecat(n):
+    '''
+    Verifica daca un numar dat este mai mic decat media aritmetica a elementelor
+    :param n: numarul dat
+    :return: True daca este mai mic, False in caz contra
+    '''
+    ok = False
     if mediaartimetica(l) > n:
-        return True
-    else:
-        return False
+        ok = True
+    return ok
+
+def divizoriproprii(n):
+    '''
+    Calculam divizorii proprii ai unui numar
+    :param n: numarul
+    :return: diviorii proprii
+    '''
+    t = 0
+    for i in range(2, n//2+1):
+        if n % i == 0:
+            t=t+1
+    return t
+
+def listacudivivori(l):
+    x = 0
+    li = []
+    for i in l:
+        if numarprim(i) == 0:
+            li.append(i)
+        else:
+            x =divizoriproprii(i)
+            li.append(x)
+
+    return li
+
 
 def test_mediaaritmetica():
     assert mediaartimetica([7,2,4,18]) == 7
@@ -77,6 +108,10 @@ def main():
         elif op == '3':
             n = int(input("Dati un numar: "))
             print(maimaredecat(n))
+        elif op == '4':
+            print(listacudivivori(l))
+        elif op == 'a':
+            pritn(mediaartimetica(l))
         elif op == 'x':
             break
         else:
