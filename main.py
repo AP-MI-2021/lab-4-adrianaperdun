@@ -1,4 +1,3 @@
-import math
 def citire():
     '''
     Citim lista
